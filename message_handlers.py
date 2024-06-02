@@ -15,5 +15,7 @@ async def starting_menu(message: Message, state: FSMContext):
     
 @msg_router.message()
 async def id_revealing(message: Message):
-    print("id данного видео: ", message.video.file_id)
-    print("id данного аудио: ", message.audio.file_id)
+    try:
+        print("id данного видео: ", message.video.file_id)
+    except AttributeError:
+        print("id данного аудио: ", message.audio.file_id)

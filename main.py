@@ -15,7 +15,7 @@ async def main():
     import message_handlers, callback_handlers
     await bot.delete_webhook(drop_pending_updates=True)
     
-    dp.include_router(message_handlers.msg_router, callback_handlers.cb_router)
+    dp.include_routers(message_handlers.msg_router, callback_handlers.cb_router)
     dp.startup.register(on_startup)
     await dp.start_polling(bot)
     

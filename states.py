@@ -1,4 +1,5 @@
 from aiogram.fsm.state import State, StatesGroup
 
-warm_up = State()
-tdt = State()
+class General_States(StatesGroup):
+    warm_up = State()
+    tdt = State()
